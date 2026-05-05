@@ -7,18 +7,16 @@
   "ioValues": [
     {
       "name": "Leg_Length",
-      "ioValue": 20,
-      "currentEquation": "20"
+      "ioValue": 20
     },
     {
       "name": "Thickness",
-      "ioValue": 1,
-      "currentEquation": "1"
+      "ioValue": 1
     },
     {
       "name": "Leg_Length_2",
       "ioValue": 20,
-      "currentEquation": "Leg_Length_1"
+      "currentEquation": "Leg_Length"
     },
     {
       "name": "Width",
@@ -27,7 +25,7 @@
     {
       "name": "Fillet",
       "ioValue": 5,
-      "currentEquation": "min(Leg_Length_1, Leg_Length_2) / 4"
+      "currentEquation": "min(Leg_Length, Leg_Length_2) / 4"
     }
   ],
   "topLevel": true,
@@ -47,21 +45,21 @@
     {
       "atomType": "Input",
       "x": 0.025384615384615384,
-      "y": 0.27976190476190477,
+      "y": 0.15384615384615385,
       "uniqueID": "id-2391",
       "name": "Leg_Length"
     },
     {
       "atomType": "Input",
       "x": 0.025384615384615384,
-      "y": 0.7321428571428571,
+      "y": 0.24615384615384617,
       "uniqueID": "id-2394",
       "name": "Thickness"
     },
     {
       "atomType": "Input",
       "x": 0.025384615384615384,
-      "y": 0.4732142857142857,
+      "y": 0.3384615384615385,
       "uniqueID": "id-2397",
       "name": "Leg_Length_2"
     },
@@ -84,7 +82,7 @@
     {
       "atomType": "Input",
       "x": 0.025384615384615384,
-      "y": 0.6101190476190477,
+      "y": 0.4307692307692308,
       "uniqueID": "id-2404",
       "name": "Width"
     },
@@ -131,6 +129,256 @@
       ]
     },
     {
+      "atomType": "Rectangle",
+      "x": 0.18098958333333331,
+      "y": 0.6607142857142857,
+      "uniqueID": "id-2489",
+      "ioValues": [
+        {
+          "name": "x length",
+          "ioValue": 20
+        },
+        {
+          "name": "y length",
+          "ioValue": 10
+        }
+      ]
+    },
+    {
+      "atomType": "Extrude",
+      "x": 0.2903645833333333,
+      "y": 0.550595238095238,
+      "uniqueID": "id-2491",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "height",
+          "ioValue": 1,
+          "currentEquation": "Thickness"
+        }
+      ]
+    },
+    {
+      "atomType": "Rotate",
+      "x": 0.359375,
+      "y": 0.5892857142857143,
+      "uniqueID": "id-2503",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "x-axis degrees",
+          "ioValue": 0
+        },
+        {
+          "name": "y-axis degrees",
+          "ioValue": -90
+        },
+        {
+          "name": "z-axis degrees",
+          "ioValue": 0
+        }
+      ]
+    },
+    {
+      "atomType": "Move",
+      "x": 0.43619791666666663,
+      "y": 0.5654761904761905,
+      "uniqueID": "id-2509",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 1,
+          "currentEquation": "Thickness"
+        },
+        {
+          "name": "yDist",
+          "ioValue": 0
+        },
+        {
+          "name": "zDist",
+          "ioValue": 10,
+          "currentEquation": "Leg_Length_2 / 2"
+        }
+      ]
+    },
+    {
+      "atomType": "Fusion",
+      "x": 0.5963541666666667,
+      "y": 0.4880952380952381,
+      "uniqueID": "id-2515",
+      "ioValues": [
+        {
+          "name": "Shape 1",
+          "ioValue": {
+            "geometry": "extrude-move-rectangle-20-10-10-0-0-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-1",
+            "dimension": "3D",
+            "plane": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "xDir": [
+                1,
+                0,
+                0
+              ],
+              "normal": [
+                0,
+                0,
+                1
+              ]
+            },
+            "color": "#aad7f2",
+            "tags": [],
+            "bom": []
+          }
+        },
+        {
+          "name": "Shape 2",
+          "ioValue": {
+            "geometry": "move-rotate-extrude-rectangle-20-10-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-1-0--90-0-1-0-10",
+            "dimension": "3D",
+            "plane": {
+              "origin": [
+                0,
+                0,
+                0
+              ],
+              "xDir": [
+                1,
+                0,
+                0
+              ],
+              "normal": [
+                0,
+                0,
+                1
+              ]
+            },
+            "color": "#aad7f2",
+            "tags": [],
+            "bom": []
+          }
+        }
+      ],
+      "unionType": "Fusion"
+    },
+    {
+      "atomType": "Rectangle",
+      "x": 0.4231770833333333,
+      "y": 0.8273809523809523,
+      "uniqueID": "id-2528",
+      "ioValues": [
+        {
+          "name": "x length",
+          "ioValue": 9,
+          "currentEquation": "Math.min(Leg_Length_1, Leg_Lenght_2)"
+        },
+        {
+          "name": "y length",
+          "ioValue": 11,
+          "currentEquation": "Width + 1"
+        }
+      ]
+    },
+    {
+      "atomType": "Equation",
+      "x": 0.2975260416666667,
+      "y": 0.8154761904761905,
+      "uniqueID": "id-2532",
+      "name": "min(x, y) / 2 - z",
+      "ioValues": [
+        {
+          "name": "x",
+          "ioValue": 20,
+          "currentEquation": "Leg_Length"
+        },
+        {
+          "name": "y",
+          "ioValue": 20,
+          "currentEquation": "Leg_Length_2"
+        },
+        {
+          "name": "z",
+          "ioValue": 1,
+          "currentEquation": "Thickness"
+        }
+      ],
+      "currentEquation": "min(x, y) / 2 - z"
+    },
+    {
+      "atomType": "Extrude",
+      "x": 0.49609375,
+      "y": 0.6458333333333334,
+      "uniqueID": "id-2537",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "height",
+          "ioValue": 9
+        }
+      ]
+    },
+    {
+      "atomType": "Move",
+      "x": 0.5651041666666666,
+      "y": 0.8601190476190476,
+      "uniqueID": "id-2541",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 4.5
+        },
+        {
+          "name": "yDist",
+          "ioValue": 0
+        },
+        {
+          "name": "zDist",
+          "ioValue": 0.01
+        }
+      ]
+    },
+    {
+      "atomType": "Equation",
+      "x": 0.37630208333333337,
+      "y": 0.9226190476190476,
+      "uniqueID": "id-2547",
+      "name": "x / 2",
+      "ioValues": [
+        {
+          "name": "x",
+          "ioValue": 9
+        }
+      ],
+      "currentEquation": "x / 2"
+    },
+    {
+      "atomType": "Input",
+      "x": 0.025384615384615384,
+      "y": 0.5230769230769231,
+      "uniqueID": "id-2551",
+      "name": "Fillet"
+    },
+    {
       "atomType": "GitHubMolecule",
       "x": 0.67578125,
       "y": 0.6011904761904762,
@@ -140,11 +388,6 @@
         {
           "name": "Shape",
           "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "Radius",
-          "ioValue": 5,
-          "currentEquation": "Fillet"
         },
         {
           "name": "Selection",
@@ -174,10 +417,6 @@
             {
               "name": "shape",
               "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "radius",
-              "ioValue": 5
             },
             {
               "name": "region",
@@ -541,259 +780,6 @@
       "unitsKey": "Unitless",
       "fileTypeVersion": 1,
       "lastReloadedFromGithubAt": 1777951259659
-    },
-    {
-      "atomType": "Rectangle",
-      "x": 0.18098958333333331,
-      "y": 0.6607142857142857,
-      "uniqueID": "id-2489",
-      "ioValues": [
-        {
-          "name": "x length",
-          "ioValue": 20
-        },
-        {
-          "name": "y length",
-          "ioValue": 10
-        }
-      ]
-    },
-    {
-      "atomType": "Extrude",
-      "x": 0.2903645833333333,
-      "y": 0.550595238095238,
-      "uniqueID": "id-2491",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "height",
-          "ioValue": 1,
-          "currentEquation": "Thickness"
-        }
-      ]
-    },
-    {
-      "atomType": "Rotate",
-      "x": 0.359375,
-      "y": 0.5892857142857143,
-      "uniqueID": "id-2503",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "x-axis degrees",
-          "ioValue": 0
-        },
-        {
-          "name": "y-axis degrees",
-          "ioValue": -90,
-          "currentEquation": "-90"
-        },
-        {
-          "name": "z-axis degrees",
-          "ioValue": 0
-        }
-      ]
-    },
-    {
-      "atomType": "Move",
-      "x": 0.43619791666666663,
-      "y": 0.5654761904761905,
-      "uniqueID": "id-2509",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "xDist",
-          "ioValue": 1,
-          "currentEquation": "Thickness"
-        },
-        {
-          "name": "yDist",
-          "ioValue": 0,
-          "currentEquation": "0"
-        },
-        {
-          "name": "zDist",
-          "ioValue": 10,
-          "currentEquation": "Leg_Length_2 / 2"
-        }
-      ]
-    },
-    {
-      "atomType": "Fusion",
-      "x": 0.5963541666666667,
-      "y": 0.4880952380952381,
-      "uniqueID": "id-2515",
-      "ioValues": [
-        {
-          "name": "Shape 1",
-          "ioValue": {
-            "geometry": "extrude-move-rectangle-20-10-10-0-0-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-1",
-            "dimension": "3D",
-            "plane": {
-              "origin": [
-                0,
-                0,
-                0
-              ],
-              "xDir": [
-                1,
-                0,
-                0
-              ],
-              "normal": [
-                0,
-                0,
-                1
-              ]
-            },
-            "color": "#aad7f2",
-            "tags": [],
-            "bom": []
-          }
-        },
-        {
-          "name": "Shape 2",
-          "ioValue": {
-            "geometry": "move-rotate-extrude-rectangle-20-10-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-1-0--90-0-1-0-10",
-            "dimension": "3D",
-            "plane": {
-              "origin": [
-                0,
-                0,
-                0
-              ],
-              "xDir": [
-                1,
-                0,
-                0
-              ],
-              "normal": [
-                0,
-                0,
-                1
-              ]
-            },
-            "color": "#aad7f2",
-            "tags": [],
-            "bom": []
-          }
-        }
-      ],
-      "unionType": "Fusion"
-    },
-    {
-      "atomType": "Rectangle",
-      "x": 0.4231770833333333,
-      "y": 0.8273809523809523,
-      "uniqueID": "id-2528",
-      "ioValues": [
-        {
-          "name": "x length",
-          "ioValue": 9,
-          "currentEquation": "Math.min(Leg_Length_1, Leg_Lenght_2)"
-        },
-        {
-          "name": "y length",
-          "ioValue": 11,
-          "currentEquation": "Width + 1"
-        }
-      ]
-    },
-    {
-      "atomType": "Equation",
-      "x": 0.2975260416666667,
-      "y": 0.8154761904761905,
-      "uniqueID": "id-2532",
-      "name": "min(x, y) / 2 - z",
-      "ioValues": [
-        {
-          "name": "x",
-          "ioValue": 20,
-          "currentEquation": "Leg_Length"
-        },
-        {
-          "name": "y",
-          "ioValue": 20,
-          "currentEquation": "Leg_Length_2"
-        },
-        {
-          "name": "z",
-          "ioValue": 1,
-          "currentEquation": "Thickness"
-        }
-      ],
-      "currentEquation": "min(x, y) / 2 - z"
-    },
-    {
-      "atomType": "Extrude",
-      "x": 0.49609375,
-      "y": 0.6458333333333334,
-      "uniqueID": "id-2537",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "height",
-          "ioValue": 9
-        }
-      ]
-    },
-    {
-      "atomType": "Move",
-      "x": 0.5651041666666666,
-      "y": 0.8601190476190476,
-      "uniqueID": "id-2541",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "xDist",
-          "ioValue": 4.5
-        },
-        {
-          "name": "yDist",
-          "ioValue": 0
-        },
-        {
-          "name": "zDist",
-          "ioValue": 0.01,
-          "currentEquation": "0.01"
-        }
-      ]
-    },
-    {
-      "atomType": "Equation",
-      "x": 0.37630208333333337,
-      "y": 0.9226190476190476,
-      "uniqueID": "id-2547",
-      "name": "x / 2",
-      "ioValues": [
-        {
-          "name": "x",
-          "ioValue": 9
-        }
-      ],
-      "currentEquation": "x / 2"
-    },
-    {
-      "atomType": "Input",
-      "x": 0.025384615384615384,
-      "y": 0.9107600732600732,
-      "uniqueID": "id-2551",
-      "name": "Fillet"
     }
   ],
   "allConnectors": [
@@ -831,11 +817,6 @@
       "ap2Name": "Shape 1",
       "ap1ID": "id-2413",
       "ap2ID": "id-2515"
-    },
-    {
-      "ap2Name": "number or geometry",
-      "ap1ID": "id-2437",
-      "ap2ID": "id-2389"
     },
     {
       "ap2Name": "geometry",
@@ -896,6 +877,11 @@
       "ap2Name": "xDist",
       "ap1ID": "id-2547",
       "ap2ID": "id-2541"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-2437",
+      "ap2ID": "id-2389"
     }
   ],
   "unitsKey": "Unitless",

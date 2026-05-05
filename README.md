@@ -7,8 +7,8 @@
 ## Inputs
 
 - **Leg_Length** (number)
-- **Thickness** (undefined)
-- **Leg_Length_2** (undefined)
+- **Thickness** (number)
+- **Leg_Length_2** (number)
 - **Width** (number)
 - **Fillet** (number)
 
