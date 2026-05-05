@@ -7,7 +7,8 @@
   "ioValues": [
     {
       "name": "Leg_Length",
-      "ioValue": 20
+      "ioValue": 10,
+      "currentEquation": "10"
     },
     {
       "name": "Thickness",
@@ -15,7 +16,7 @@
     },
     {
       "name": "Leg_Length_2",
-      "ioValue": 20,
+      "ioValue": 10,
       "currentEquation": "Leg_Length"
     },
     {
@@ -24,7 +25,7 @@
     },
     {
       "name": "Fillet",
-      "ioValue": 5,
+      "ioValue": 2.5,
       "currentEquation": "min(Leg_Length, Leg_Length_2) / 4"
     }
   ],
@@ -71,7 +72,7 @@
       "ioValues": [
         {
           "name": "x length",
-          "ioValue": 20
+          "ioValue": 10
         },
         {
           "name": "y length",
@@ -98,8 +99,8 @@
         },
         {
           "name": "xDist",
-          "ioValue": 10,
-          "currentEquation": "Leg_Length_1 / 2"
+          "ioValue": 5,
+          "currentEquation": "Leg_Length / 2"
         },
         {
           "name": "yDist",
@@ -136,7 +137,7 @@
       "ioValues": [
         {
           "name": "x length",
-          "ioValue": 20
+          "ioValue": 10
         },
         {
           "name": "y length",
@@ -206,7 +207,7 @@
         },
         {
           "name": "zDist",
-          "ioValue": 10,
+          "ioValue": 5,
           "currentEquation": "Leg_Length_2 / 2"
         }
       ]
@@ -220,7 +221,7 @@
         {
           "name": "Shape 1",
           "ioValue": {
-            "geometry": "extrude-move-rectangle-20-10-10-0-0-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-1",
+            "geometry": "extrude-move-rectangle-10-10-5-0-0-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-1",
             "dimension": "3D",
             "plane": {
               "origin": [
@@ -247,7 +248,7 @@
         {
           "name": "Shape 2",
           "ioValue": {
-            "geometry": "move-rotate-extrude-rectangle-20-10-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-1-0--90-0-1-0-10",
+            "geometry": "move-rotate-extrude-rectangle-10-10-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-1-0--90-0-1-0-5",
             "dimension": "3D",
             "plane": {
               "origin": [
@@ -282,7 +283,7 @@
       "ioValues": [
         {
           "name": "x length",
-          "ioValue": 9,
+          "ioValue": 4,
           "currentEquation": "Math.min(Leg_Length_1, Leg_Lenght_2)"
         },
         {
@@ -301,12 +302,12 @@
       "ioValues": [
         {
           "name": "x",
-          "ioValue": 20,
+          "ioValue": 10,
           "currentEquation": "Leg_Length"
         },
         {
           "name": "y",
-          "ioValue": 20,
+          "ioValue": 10,
           "currentEquation": "Leg_Length_2"
         },
         {
@@ -329,7 +330,7 @@
         },
         {
           "name": "height",
-          "ioValue": 9
+          "ioValue": 4
         }
       ]
     },
@@ -345,7 +346,7 @@
         },
         {
           "name": "xDist",
-          "ioValue": 4.5
+          "ioValue": 2
         },
         {
           "name": "yDist",
@@ -366,7 +367,7 @@
       "ioValues": [
         {
           "name": "x",
-          "ioValue": 9
+          "ioValue": 4
         }
       ],
       "currentEquation": "x / 2"
@@ -391,7 +392,7 @@
         },
         {
           "name": "Radius",
-          "ioValue": 5,
+          "ioValue": 2.5,
           "currentEquation": "Fillet"
         },
         {
@@ -424,15 +425,15 @@
               "ioValue": "__GEOMETRY_INPUT__"
             },
             {
-              "name": "region",
-              "ioValue": "__GEOMETRY_INPUT__"
+              "name": "radius",
+              "ioValue": 2.5
             },
             {
-              "name": "radius",
-              "ioValue": 5
+              "name": "region",
+              "ioValue": "__GEOMETRY_INPUT__"
             }
           ],
-          "codeVersion": 1,
+          "interpreterVersion": 0,
           "code": "const Inputs = [\n  { inputName: \"shape\", type: \"geometry\", defaultValue: null },\n  { inputName: \"radius\", type: \"number\", defaultValue: 2 },\n  { inputName: \"region\", type: \"geometry\", defaultValue: null },\n];\n\nlet assembly = library[shape];\n\nlet edgeFilter = null;\nif (region !== null) {\n  let bounds = await GetBounds(region);\n  const tol = 1e-6;\n  edgeFilter = (e) => e.when(({ element }) => {\n    const bb = element.boundingBox.bounds;\n    return (\n      bb[0][0] >= bounds.min[0] - tol &&\n      bb[0][1] >= bounds.min[1] - tol &&\n      bb[0][2] >= bounds.min[2] - tol &&\n      bb[1][0] <= bounds.max[0] + tol &&\n      bb[1][1] <= bounds.max[1] + tol &&\n      bb[1][2] <= bounds.max[2] + tol\n    );\n  });\n}\n\nreturn await AssemblyMap(assembly, async (leaf) => {\n  let solid = leaf.geometry[0];\n  let filleted = edgeFilter ? solid.fillet(radius, edgeFilter) : solid.fillet(radius);\n  return { ...leaf, geometry: [filleted] };\n});"
         },
         {
