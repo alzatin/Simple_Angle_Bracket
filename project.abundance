@@ -390,6 +390,11 @@
           "ioValue": "__GEOMETRY_INPUT__"
         },
         {
+          "name": "Radius",
+          "ioValue": 5,
+          "currentEquation": "Fillet"
+        },
+        {
           "name": "Selection",
           "ioValue": "__GEOMETRY_INPUT__"
         }
@@ -421,6 +426,10 @@
             {
               "name": "region",
               "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "radius",
+              "ioValue": 5
             }
           ],
           "codeVersion": 1,
