@@ -6,10 +6,11 @@
 
 ## Inputs
 
-- **Leg_Length_1** (number)
+- **Leg_Length** (number)
 - **Thickness** (undefined)
 - **Leg_Length_2** (undefined)
 - **Width** (number)
+- **Fillet** (number)
 
 
 
