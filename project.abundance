@@ -26,6 +26,10 @@
       "name": "Fillet",
       "ioValue": 2.5,
       "currentEquation": "min(Leg_Length, Leg_Length_2) / 4"
+    },
+    {
+      "name": "ArrayInput",
+      "ioValue": 10
     }
   ],
   "topLevel": true,
@@ -789,6 +793,14 @@
       "unitsKey": "Unitless",
       "fileTypeVersion": 1,
       "lastReloadedFromGithubAt": 1777951259659
+    },
+    {
+      "atomType": "Input",
+      "x": 0.025384615384615384,
+      "y": 0.7171428571428571,
+      "uniqueID": "id-2664",
+      "name": "ArrayInput",
+      "type": "array"
     }
   ],
   "allConnectors": [
