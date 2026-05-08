@@ -29,9 +29,7 @@
     },
     {
       "name": "ArrayInput",
-      "ioValue": [
-        ""
-      ]
+      "ioValue": 10
     }
   ],
   "topLevel": true,
@@ -383,14 +381,6 @@
       "y": 0.5230769230769231,
       "uniqueID": "id-2551",
       "name": "Fillet"
-    },
-    {
-      "atomType": "Input",
-      "x": 0.025384615384615384,
-      "y": 0.6153846153846154,
-      "uniqueID": "id-2664",
-      "name": "ArrayInput",
-      "type": "array"
     },
     {
       "atomType": "GitHubMolecule",
@@ -803,6 +793,14 @@
       "unitsKey": "Unitless",
       "fileTypeVersion": 1,
       "lastReloadedFromGithubAt": 1777951259659
+    },
+    {
+      "atomType": "Input",
+      "x": 0.025384615384615384,
+      "y": 0.7171428571428571,
+      "uniqueID": "id-2664",
+      "name": "ArrayInput",
+      "type": "array"
     }
   ],
   "allConnectors": [
