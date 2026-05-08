@@ -383,6 +383,15 @@
       "name": "Fillet"
     },
     {
+      "atomType": "Input",
+      "x": 0.025384615384615384,
+      "y": 0.6153846153846154,
+      "uniqueID": "id-2664",
+      "name": "ArrayInput",
+      "type": "array",
+      "options": []
+    },
+    {
       "atomType": "GitHubMolecule",
       "x": 0.67578125,
       "y": 0.6011904761904762,
@@ -793,14 +802,6 @@
       "unitsKey": "Unitless",
       "fileTypeVersion": 1,
       "lastReloadedFromGithubAt": 1777951259659
-    },
-    {
-      "atomType": "Input",
-      "x": 0.025384615384615384,
-      "y": 0.7171428571428571,
-      "uniqueID": "id-2664",
-      "name": "ArrayInput",
-      "type": "array"
     }
   ],
   "allConnectors": [
