@@ -11,7 +11,6 @@
 - **Leg_Length_2** (number)
 - **Width** (number)
 - **Fillet** (number)
-- **ArrayInput** (array)
 
 
 
