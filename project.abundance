@@ -11,7 +11,8 @@
     },
     {
       "name": "Thickness",
-      "ioValue": 2
+      "ioValue": 2,
+      "currentEquation": "2"
     },
     {
       "name": "Leg_Length_2",
@@ -20,7 +21,8 @@
     },
     {
       "name": "Width",
-      "ioValue": 4
+      "ioValue": 2,
+      "currentEquation": "2"
     },
     {
       "name": "Fillet",
@@ -44,22 +46,22 @@
     },
     {
       "atomType": "Input",
-      "x": 0.0231,
-      "y": 0.14,
+      "x": 0.021449999999999997,
+      "y": 0.13,
       "uniqueID": "id-2391",
       "name": "Leg_Length"
     },
     {
       "atomType": "Input",
-      "x": 0.0231,
-      "y": 0.22400000000000003,
+      "x": 0.021449999999999997,
+      "y": 0.20800000000000002,
       "uniqueID": "id-2394",
       "name": "Thickness"
     },
     {
       "atomType": "Input",
-      "x": 0.0231,
-      "y": 0.30800000000000005,
+      "x": 0.021449999999999997,
+      "y": 0.28600000000000003,
       "uniqueID": "id-2397",
       "name": "Leg_Length_2"
     },
@@ -75,14 +77,14 @@
         },
         {
           "name": "y length",
-          "ioValue": 4
+          "ioValue": 2
         }
       ]
     },
     {
       "atomType": "Input",
-      "x": 0.0231,
-      "y": 0.39200000000000007,
+      "x": 0.021449999999999997,
+      "y": 0.36400000000000005,
       "uniqueID": "id-2404",
       "name": "Width"
     },
@@ -140,7 +142,7 @@
         },
         {
           "name": "y length",
-          "ioValue": 4
+          "ioValue": 2
         }
       ]
     },
@@ -220,7 +222,7 @@
         {
           "name": "Shape 1",
           "ioValue": {
-            "geometry": "extrude-move-rectangle-10-4-5-0-0-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-2",
+            "geometry": "extrude-move-rectangle-10-2-5-0-0-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-2",
             "dimension": "3D",
             "plane": {
               "origin": [
@@ -247,7 +249,7 @@
         {
           "name": "Shape 2",
           "ioValue": {
-            "geometry": "move-rotate-extrude-rectangle-10-4-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-2-0--90-0-2-0-5",
+            "geometry": "move-rotate-extrude-rectangle-10-2-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-2-0--90-0-2-0-5",
             "dimension": "3D",
             "plane": {
               "origin": [
@@ -287,7 +289,7 @@
         },
         {
           "name": "y length",
-          "ioValue": 5,
+          "ioValue": 3,
           "currentEquation": "Width + 1"
         }
       ]
@@ -373,8 +375,8 @@
     },
     {
       "atomType": "Input",
-      "x": 0.0231,
-      "y": 0.5771428571428572,
+      "x": 0.021449999999999997,
+      "y": 0.44200000000000006,
       "uniqueID": "id-2551",
       "name": "Fillet"
     },
@@ -553,23 +555,23 @@
         },
         {
           "atomType": "Input",
-          "x": 0.0231,
-          "y": 0.14,
+          "x": 0.021449999999999997,
+          "y": 0.13,
           "uniqueID": "id-2434",
           "name": "Shape",
           "type": "geometry"
         },
         {
           "atomType": "Input",
-          "x": 0.0231,
-          "y": 0.22400000000000003,
+          "x": 0.021449999999999997,
+          "y": 0.20800000000000002,
           "uniqueID": "id-2435",
           "name": "Radius"
         },
         {
           "atomType": "Input",
-          "x": 0.0231,
-          "y": 0.30800000000000005,
+          "x": 0.021449999999999997,
+          "y": 0.28600000000000003,
           "uniqueID": "id-2436",
           "name": "Selection",
           "type": "geometry"
@@ -606,16 +608,16 @@
             },
             {
               "atomType": "Input",
-              "x": 0.0231,
-              "y": 0.14,
+              "x": 0.021449999999999997,
+              "y": 0.13,
               "uniqueID": "id-2429",
               "name": "OD",
               "type": "number"
             },
             {
               "atomType": "Input",
-              "x": 0.0231,
-              "y": 0.22400000000000003,
+              "x": 0.021449999999999997,
+              "y": 0.20800000000000002,
               "uniqueID": "id-2430",
               "name": "ID",
               "type": "number"
